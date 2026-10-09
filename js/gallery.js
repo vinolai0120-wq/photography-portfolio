@@ -29,6 +29,7 @@ function updateWall(index) {
     item.classList.remove('is-current', 'is-prev', 'is-next', 'is-hidden');
     item.tabIndex = -1;
     item.style.setProperty('--piece-scale', item.dataset.scale || '1');
+    item.style.setProperty('--art-size', item.dataset.artSize || 'cover');
 
     if (itemIndex === currentIndex) {
       item.classList.add('is-current');

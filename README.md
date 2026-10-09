@@ -16,13 +16,16 @@ python3 -m http.server 4173
 
 项目详情页使用暗色画廊墙：中央照片最大，两侧照片缩小并带有画框、透视和射灯光晕。支持左右键、页面按钮、点击侧边照片和手机左右滑动。点击中央照片可打开大图预览。
 
-每张图片都可以单独控制中央画框的显示比例，修改项目 HTML 中的 `data-scale`：
+每张图片都可以单独控制两个比例，修改项目 HTML 中的参数：
 
 ```html
-<button class="gallery-image photo-city-01" data-scale="1.04" ...></button>
+<button class="gallery-image" data-scale="1.04" data-art-size="82% auto" ...></button>
 ```
 
-例如 `1.15` 会放大 15%，`.9` 会缩小 10%。照片比例差异较大时，可以分别调整这个数值。
+- `data-scale` 控制整件画框在墙上的大小，例如 `1.15` 放大 15%，`.9` 缩小 10%。
+- `data-art-size` 控制卡纸内作品区大小，例如 `82% auto` 会像展览装裱一样保留更多白边，`100% 100%` 会铺满作品区。
+
+照片比例差异较大时，优先调 `data-art-size`，需要整件作品更突出时再调 `data-scale`。
 
 
 ## 上传自己的照片

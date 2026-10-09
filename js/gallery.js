@@ -10,8 +10,9 @@ let currentIndex = 0;
 let touchStartX = null;
 
 function imageSource(item) {
-  const background = getComputedStyle(item).backgroundImage;
-  const fallback = item.dataset.placeholder || background.match(/url\(["']?(.*?)["']?\)/)?.[1];
+  const art = item.querySelector('.frame-art');
+  const background = art ? getComputedStyle(art).backgroundImage : '';
+  const fallback = background.match(/url\(["']?(.*?)["']?\)/)?.[1] || item.dataset.placeholder;
   return { full: item.dataset.full, fallback };
 }
 
@@ -30,6 +31,16 @@ function updateWall(index) {
     item.tabIndex = -1;
     item.style.setProperty('--piece-scale', item.dataset.scale || '1');
     item.style.setProperty('--art-size', item.dataset.artSize || 'cover');
+    const art = item.querySelector('.frame-art');
+    if (art) {
+      const localFallback = getComputedStyle(item).getPropertyValue('--art-image').trim();
+      art.style.backgroundImage = localFallback || 'none';
+      const probe = new Image();
+      probe.onload = () => {
+        art.style.backgroundImage = `url("${item.dataset.full}")`;
+      };
+      probe.src = item.dataset.full;
+    }
 
     if (itemIndex === currentIndex) {
       item.classList.add('is-current');

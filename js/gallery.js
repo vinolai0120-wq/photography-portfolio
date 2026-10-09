@@ -126,7 +126,7 @@ async function loadGallery() {
   if (!wall) return;
   const manifestUrl = wall.dataset.manifest;
   try {
-    const response = await fetch(manifestUrl);
+    const response = await fetch(`${manifestUrl}?v=photos-contain-20261010`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`);
     const manifest = await response.json();
     galleryButtons = manifest.map((item, index) => createGalleryButton(item, index, manifestUrl));

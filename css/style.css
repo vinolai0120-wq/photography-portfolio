@@ -72,9 +72,9 @@ h1, h2, p { margin-top: 0; }
 .project-row:hover { padding-left: 14px; padding-right: 14px; }
 .project-image { min-height: 250px; background-color: #c6c2b8; background-size: cover; background-position: center; filter: saturate(.75); transition: filter .25s ease, transform .25s ease; }
 .project-row:hover .project-image { filter: saturate(1); transform: scale(1.015); }
-.image-city { background-image: url('../images/placeholders/city-01.svg'); }
-.image-road { background-image: url('../images/placeholders/road-01.svg'); }
-.image-corners { background-image: url('../images/placeholders/corners-01.svg'); }
+.image-city { background-image: url('../images/city-after-rain/01.jpg'); }
+.image-road { background-image: url('../images/along-the-way/web/01.jpg'); }
+.image-corners { background-image: url('../images/quiet-corners/web/01.jpg'); }
 .project-meta { align-self: center; }
 .project-index { display: block; margin-bottom: 24px; color: var(--muted); font-size: 11px; }
 .project-meta h2 { margin-bottom: 7px; font-family: Georgia, serif; font-size: clamp(28px, 3vw, 45px); font-weight: 400; line-height: 1; }
@@ -220,16 +220,7 @@ h1, h2, p { margin-top: 0; }
 .gallery-image.is-prev { transform: translate(calc(-50% - min(38vw, 520px)), -50%) rotateY(11deg) scale(calc(var(--piece-scale, 1) * .92)); }
 .gallery-image.is-next { transform: translate(calc(-50% + min(38vw, 520px)), -50%) rotateY(-11deg) scale(calc(var(--piece-scale, 1) * .92)); }
 .gallery-image.is-hidden { z-index: 1; opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(.72); }
-.photo-city-01 { --art-image: url('../images/placeholders/city-01.svg'); }
-.photo-city-02 { --art-image: url('../images/placeholders/city-02.svg'); }
-.photo-city-03 { --art-image: url('../images/placeholders/city-03.svg'); }
-.photo-city-04 { --art-image: url('../images/placeholders/city-04.svg'); }
-.photo-road-01 { --art-image: url('../images/placeholders/road-01.svg'); }
-.photo-road-02 { --art-image: url('../images/placeholders/road-02.svg'); }
-.photo-road-03 { --art-image: url('../images/placeholders/road-03.svg'); }
-.photo-corners-01 { --art-image: url('../images/placeholders/corners-01.svg'); }
-.photo-corners-02 { --art-image: url('../images/placeholders/corners-02.svg'); }
-.photo-corners-03 { --art-image: url('../images/placeholders/corners-03.svg'); }
+/* Legacy per-photo classes are retained only for custom manifests. */
 .wall-caption { position: absolute; bottom: 24px; left: 50%; color: #aaa79e; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; transform: translateX(-50%); }
 
 .lightbox { position: fixed; inset: 0; z-index: 10; display: grid; grid-template-columns: 70px minmax(0, 1fr) 70px; grid-template-rows: minmax(0, 1fr) auto; align-items: center; padding: 24px; background: rgba(8, 8, 7, .97); }

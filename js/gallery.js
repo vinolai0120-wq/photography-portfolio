@@ -1,4 +1,3 @@
-const galleryButtons = [...document.querySelectorAll('.gallery-image')];
 const wall = document.querySelector('.gallery');
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox?.querySelector('img');
@@ -6,6 +5,8 @@ const caption = lightbox?.querySelector('.lightbox-caption');
 const prevControls = [...document.querySelectorAll('[data-gallery-prev]')];
 const nextControls = [...document.querySelectorAll('[data-gallery-next]')];
 const counter = document.querySelector('[data-gallery-counter]');
+const projectName = document.querySelector('[data-project-name]')?.textContent || '项目';
+let galleryButtons = [];
 let currentIndex = 0;
 let touchStartX = null;
 
@@ -31,16 +32,9 @@ function updateWall(index) {
     item.tabIndex = -1;
     item.style.setProperty('--piece-scale', item.dataset.scale || '1');
     item.style.setProperty('--art-size', item.dataset.artSize || 'cover');
+
     const art = item.querySelector('.frame-art');
-    if (art) {
-      const localFallback = getComputedStyle(item).getPropertyValue('--art-image').trim();
-      art.style.backgroundImage = localFallback || 'none';
-      const probe = new Image();
-      probe.onload = () => {
-        art.style.backgroundImage = `url("${item.dataset.full}")`;
-      };
-      probe.src = item.dataset.full;
-    }
+    if (art) art.style.backgroundImage = `url("${item.dataset.full}")`;
 
     if (itemIndex === currentIndex) {
       item.classList.add('is-current');
@@ -64,7 +58,7 @@ function moveGallery(step) {
 }
 
 function openLightbox() {
-  if (!lightbox || !lightboxImage) return;
+  if (!lightbox || !lightboxImage || !galleryButtons.length) return;
   const item = galleryButtons[currentIndex];
   const { full, fallback } = imageSource(item);
   lightboxImage.onerror = () => {
@@ -86,15 +80,50 @@ function closeLightbox() {
   document.body.classList.remove('modal-open');
 }
 
-galleryButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    if (index === currentIndex) {
-      openLightbox();
-      return;
-    }
-    updateWall(index);
+function bindGalleryButtons() {
+  galleryButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      if (index === currentIndex) {
+        openLightbox();
+        return;
+      }
+      updateWall(index);
+    });
   });
-});
+}
+
+function createGalleryButton(item, index, manifestUrl) {
+  const button = document.createElement('button');
+  const manifestBase = new URL(manifestUrl, document.baseURI);
+  const full = new URL(item.file, manifestBase).href;
+  button.className = 'gallery-image';
+  button.type = 'button';
+  button.dataset.full = full;
+  button.dataset.scale = item.scale ?? '1';
+  button.dataset.artSize = item.artSize ?? '82% auto';
+  button.dataset.caption = `${projectName} / ${String(index + 1).padStart(2, '0')}`;
+  button.setAttribute('aria-label', `打开照片 ${index + 1}`);
+  button.innerHTML = '<span class="frame-art" aria-hidden="true"></span>';
+  return button;
+}
+
+async function loadGallery() {
+  if (!wall) return;
+  const manifestUrl = wall.dataset.manifest;
+  try {
+    const response = await fetch(manifestUrl);
+    if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`);
+    const manifest = await response.json();
+    galleryButtons = manifest.map((item, index) => createGalleryButton(item, index, manifestUrl));
+    wall.replaceChildren(...galleryButtons);
+    bindGalleryButtons();
+    updateWall(0);
+  } catch (error) {
+    wall.innerHTML = '<p class="gallery-error">照片清单暂时无法加载。</p>';
+    if (counter) counter.textContent = '-- / --';
+    console.error(error);
+  }
+}
 
 prevControls.forEach((button) => button.addEventListener('click', () => moveGallery(-1)));
 nextControls.forEach((button) => button.addEventListener('click', () => moveGallery(1)));
@@ -146,4 +175,4 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && document.activeElement?.classList.contains('is-current')) openLightbox();
 });
 
-updateWall(0);
+loadGallery();

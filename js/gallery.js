@@ -21,6 +21,17 @@ function wrapIndex(index) {
   return (index + galleryButtons.length) % galleryButtons.length;
 }
 
+function applyArtSize(item, art) {
+  const values = (item.dataset.artSize || '82% auto').trim().split(/\s+/);
+  let maxWidth = values[0] || '100%';
+  let maxHeight = values[1] || '100%';
+  if (maxWidth === 'cover') maxWidth = '88%';
+  if (maxHeight === 'auto') maxHeight = maxWidth;
+  if (maxWidth === 'auto') maxWidth = '88%';
+  art.style.setProperty('--art-max-width', maxWidth);
+  art.style.setProperty('--art-max-height', maxHeight);
+}
+
 function updateWall(index) {
   if (!galleryButtons.length) return;
   currentIndex = wrapIndex(index);
@@ -34,7 +45,11 @@ function updateWall(index) {
     item.style.setProperty('--art-size', item.dataset.artSize || 'cover');
 
     const art = item.querySelector('.frame-art');
-    if (art) art.style.backgroundImage = `url("${item.dataset.full}")`;
+    if (art) {
+      const image = art.querySelector('img');
+      applyArtSize(item, art);
+      if (image) image.loading = itemIndex === currentIndex ? 'eager' : 'lazy';
+    }
 
     if (itemIndex === currentIndex) {
       item.classList.add('is-current');
@@ -103,7 +118,7 @@ function createGalleryButton(item, index, manifestUrl) {
   button.dataset.artSize = item.artSize ?? '82% auto';
   button.dataset.caption = `${projectName} / ${String(index + 1).padStart(2, '0')}`;
   button.setAttribute('aria-label', `打开照片 ${index + 1}`);
-  button.innerHTML = '<span class="frame-art" aria-hidden="true"></span>';
+  button.innerHTML = `<span class="frame-art" aria-hidden="true"><img src="${full}" alt="" decoding="async"></span>`;
   return button;
 }
 

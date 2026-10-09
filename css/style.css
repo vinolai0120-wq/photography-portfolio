@@ -174,13 +174,20 @@ h1, h2, p { margin-top: 0; }
 .frame-art {
   position: absolute;
   inset: 30px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #eee8dc;
-  background-image: var(--art-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: var(--art-size, cover);
   box-shadow: inset 0 0 0 1px rgba(111, 96, 76, .24), inset 0 0 14px rgba(84, 70, 54, .16), 0 1px 1px rgba(255, 255, 255, .24);
+}
+.frame-art img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: var(--art-max-width, 100%);
+  max-height: var(--art-max-height, 100%);
+  object-fit: contain;
+  object-position: center;
 }
 .frame-art::after {
   position: absolute;

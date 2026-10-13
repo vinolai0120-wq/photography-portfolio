@@ -70,12 +70,54 @@ h1, h2, p { margin-top: 0; }
   white-space: nowrap;
 }
 .intro-note { display: none; }
-.home-cloud { position: absolute; top: 44px; right: 8%; width: 120px; height: 34px; border: 1px solid #b9c5c8; border-radius: 35px; background: rgba(255, 255, 255, .92); box-shadow: 0 10px 24px rgba(126, 145, 150, .1); animation: cloud-drift 18s ease-in-out infinite alternate; }
-.home-cloud::before, .home-cloud::after { position: absolute; border: 1px solid #b9c5c8; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(255, 255, 255, .96); content: ""; }
-.home-cloud::before { right: 38px; bottom: 21px; width: 38px; height: 30px; }
-.home-cloud::after { right: 14px; bottom: 17px; width: 50px; height: 38px; }
-.home-cloud-shadow { position: absolute; right: 16px; bottom: -8px; width: 86px; height: 9px; border-radius: 50%; background: rgba(143, 158, 160, .12); filter: blur(5px); }
-@keyframes cloud-drift { from { transform: translateX(-12px); } to { transform: translateX(24px); } }
+.home-cloud {
+  position: absolute;
+  top: 44px;
+  right: 8%;
+  width: 128px;
+  height: 38px;
+  border: 0;
+  border-radius: 52% 48% 46% 54%;
+  background: rgba(157, 207, 222, .27);
+  box-shadow: 10px 7px 18px rgba(113, 177, 198, .12), -7px 2px 17px rgba(188, 224, 231, .25);
+  filter: blur(.35px);
+  animation: cloud-drift 18s ease-in-out infinite alternate;
+}
+.home-cloud::before,
+.home-cloud::after {
+  position: absolute;
+  border: 0;
+  border-radius: 55% 45% 48% 52%;
+  content: "";
+  filter: blur(1.2px);
+}
+.home-cloud::before {
+  right: 42px;
+  bottom: 15px;
+  width: 54px;
+  height: 39px;
+  background: rgba(132, 196, 216, .25);
+  transform: rotate(-7deg);
+}
+.home-cloud::after {
+  right: 10px;
+  bottom: 12px;
+  width: 68px;
+  height: 47px;
+  background: rgba(175, 216, 226, .32);
+  transform: rotate(5deg);
+}
+.home-cloud-shadow {
+  position: absolute;
+  right: 13px;
+  bottom: -10px;
+  width: 96px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(104, 174, 198, .14);
+  filter: blur(8px);
+}
+@keyframes cloud-drift { from { transform: translateX(-12px) rotate(-1deg); } to { transform: translateX(24px) rotate(1deg); } }
 
 .project-list { padding-top: 62px; }
 .project-row {

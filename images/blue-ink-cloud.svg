@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" fill="none">
+  <defs>
+    <filter id="wash" x="-18%" y="-25%" width="136%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .08" numOctaves="2" seed="14" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="5" xChannelSelector="R" yChannelSelector="G" result="edge"/>
+      <feGaussianBlur in="edge" stdDeviation="5"/>
+    </filter>
+    <filter id="dry" x="-8%" y="-15%" width="116%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .08" numOctaves="2" seed="14" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="3.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <linearGradient id="blue-wash" x1="170" y1="145" x2="780" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b5dbe0" stop-opacity=".12"/>
+      <stop offset=".45" stop-color="#6aaec0" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#c6dedc" stop-opacity=".1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Soft blue wash with no box or hard perimeter. -->
+  <g filter="url(#wash)">
+    <path d="M166 185c56-45 131-69 204-51 59 14 92 45 161 39 72-7 121-48 196-38 45 6 86 29 123 64-53 42-130 63-207 55-84-9-129-37-210-20-91 18-161 31-267-49Z" fill="url(#blue-wash)"/>
+    <path d="M244 251c74 34 151 43 222 20 57-18 103-44 163-37 44 5 79 22 118 47-77 39-160 51-243 37-97-16-163-40-260-67Z" fill="#8abac5" fill-opacity=".16"/>
+  </g>
+
+  <!-- Three open blue brush gestures, with layered ink density. -->
+  <g filter="url(#dry)">
+    <path d="M182 185c41-37 90-57 144-63 37-4 69 1 103 12 24 8 47 19 73 25 28 7 59 7 94-1-28 17-57 25-89 23-39-1-74-18-109-28-34-10-64-12-101-5-43 8-75 25-115 51-9 6-17-1 0-14Z" fill="#4c9bb0" fill-opacity=".86"/>
+    <path d="M211 194c34-23 65-37 95-43 20-4 38-4 59-1-32 5-59 13-88 29-20 11-39 23-60 35-12 6-17-7-6-20Z" fill="#78b9c5" fill-opacity=".72"/>
+    <path d="M570 157c30 5 53 3 78-4 9-3 16 4 6 10-26 15-54 19-87 11-12-3-10-19 3-17Z" fill="#387f9b" fill-opacity=".86"/>
+    <path d="M655 153l35-13m-18 24 30-7m-72 14 24 3" stroke="#2e718e" stroke-width="7" stroke-linecap="round" opacity=".78"/>
+
+    <path d="M322 218c46-18 82-25 122-21 35 4 63 16 96 18 28 2 56-4 88-18-29 25-62 38-98 39-39 1-72-15-108-21-31-5-57-2-91 10-14 5-22-1-9-7Z" fill="#438fa8" fill-opacity=".82"/>
+    <path d="M354 228c26-9 48-12 71-10m81 12c19 3 38 2 56-4" stroke="#285f7e" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+
+    <path d="M235 278c50 20 94 31 139 30 40-1 75-16 113-29 37-12 72-15 112-2-43-2-73 10-108 26-40 18-77 31-125 28-51-4-94-20-140-44-12-7-6-16 9-9Z" fill="#5ca2af" fill-opacity=".74"/>
+    <path d="M285 299c29 12 52 18 78 19m157-25c24-9 44-13 67-10" stroke="#34758d" stroke-width="6" stroke-linecap="round" opacity=".5"/>
+    <path d="M393 316l29-7m-10 16 22-5m156-40 26-7m-8 15 18-4" stroke="#2d708d" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+  </g>
+
+  <!-- Fine blue dry-brush traces. -->
+  <g stroke="#2b718c" stroke-linecap="round" filter="url(#dry)">
+    <path d="M165 174l25-20m12 42 20-13m178-78 24 5m104 52 22 4m-305 72 17 8m225 7 20-7m58 44 22 3" stroke-width="5" opacity=".62"/>
+    <path d="M250 161l13-8m267 14 15-3m-227 85 14 6m106 7 16-6" stroke-width="3" opacity=".55"/>
+  </g>
+</svg>

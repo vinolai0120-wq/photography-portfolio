@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="190" viewBox="0 0 360 190" fill="none">
+  <defs>
+    <filter id="bleed" x="-25%" y="-45%" width="150%" height="190%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.085" numOctaves="3" seed="19" result="paper"/>
+      <feDisplacementMap in="SourceGraphic" in2="paper" scale="12" xChannelSelector="R" yChannelSelector="G" result="edge"/>
+      <feGaussianBlur in="edge" stdDeviation="4.5"/>
+    </filter>
+    <filter id="dry-brush" x="-15%" y="-25%" width="130%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.12" numOctaves="2" seed="6" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="6" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+      <feGaussianBlur in="rough" stdDeviation="1.2"/>
+    </filter>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <g filter="url(#bleed)" opacity=".6" stroke="#347f9f">
+      <path d="M43 112c19-18 40-28 62-25 12 2 21 8 30 13 10-28 31-48 51-47 20 1 31 18 34 38 15-13 32-17 45-9 10 6 15 15 17 25" stroke-width="32"/>
+      <path d="M91 137c30 9 60 12 91 10 17-1 31-3 44-7" stroke-width="27"/>
+      <path d="M250 139c17-3 34-8 49-15" stroke-width="22"/>
+    </g>
+    <g filter="url(#dry-brush)">
+      <path d="M42 108c20-18 40-27 62-24 12 2 21 8 30 13 10-27 31-46 51-45 19 1 30 17 33 36 15-12 31-16 43-9 10 6 15 15 17 24" stroke="#5ba8c5" stroke-width="21" opacity=".93"/>
+      <path d="M86 132c25 8 49 11 75 11" stroke="#367f9f" stroke-width="17" opacity=".84"/>
+      <path d="M180 143c17 0 31-2 45-6" stroke="#4d96b5" stroke-width="13" opacity=".78"/>
+      <path d="M250 138c16-3 31-8 46-15" stroke="#3b85a4" stroke-width="16" opacity=".85"/>
+      <path d="M102 87c9 3 16 7 22 12m61-43c9 4 15 12 19 22m39 12c7-3 13-3 19 0" stroke="#245f7d" stroke-width="7" opacity=".57"/>
+      <path d="M123 127c25 6 48 8 68 7" stroke="#9bcbd9" stroke-width="6" opacity=".76"/>
+    </g>
+    <g opacity=".44" stroke="#367e9d" stroke-width="3">
+      <path d="M55 98c5-5 10-9 15-12"/>
+      <path d="M150 70c4-7 8-12 14-17"/>
+      <path d="M236 78c5-4 10-6 15-6"/>
+      <path d="M301 119c5-1 9 0 13 3"/>
+    </g>
+  </g>
+</svg>

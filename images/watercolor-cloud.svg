@@ -40,12 +40,27 @@
     <path d="M255 152c28-16 52-26 78-27 29-1 49 8 78 20" fill="#367f9e" fill-opacity=".24"/>
   </g>
 
-  <!-- Distinct, dry-edged brush passes keep painterly texture visible when small. -->
+  <!-- Impressionist brush dabs with varied pressure and broken rhythm. -->
   <g filter="url(#brush-grain)" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M74 139c36-22 67-29 94-20m18 7c28 17 51 22 81 15m19-9c29-17 56-23 81-17m18 7c17 5 31 11 47 20" stroke="#347d99" stroke-width="10" opacity=".76"/>
-    <path d="M105 180c32 10 59 13 87 7m29-3c24-8 41-15 65-15m34 3c23 1 41 5 62 12" stroke="#367f8e" stroke-width="9" opacity=".55"/>
-    <path d="M121 111c19 2 34 9 48 19m93 12c15-7 27-13 43-16m52 8c13 2 23 7 34 14" stroke="#d9ece3" stroke-width="6" opacity=".72"/>
-    <path d="M84 129l17-9m76 66 12 4m110-58 15-8m68 31 13 7" stroke="#2f718c" stroke-width="4" opacity=".55"/>
-    <path d="M139 151c15 7 29 10 42 10m96-3c13-5 23-7 35-7" stroke="#b5d8d3" stroke-width="5" opacity=".73"/>
+    <path d="M72 139c13-9 25-14 38-15" stroke="#2f718d" stroke-width="13" opacity=".74"/>
+    <path d="M113 126c11-3 20-2 29 3" stroke="#5ba4b6" stroke-width="17" opacity=".78"/>
+    <path d="M154 135c13 8 24 11 37 10" stroke="#347b98" stroke-width="12" opacity=".82"/>
+    <path d="M194 119c13-11 25-16 37-15" stroke="#79b9c2" stroke-width="18" opacity=".73"/>
+    <path d="M231 132c15-9 27-13 41-12" stroke="#286d89" stroke-width="14" opacity=".84"/>
+    <path d="M272 116c11-9 23-12 34-9" stroke="#4b98ad" stroke-width="16" opacity=".77"/>
+    <path d="M309 132c14-7 27-9 40-6" stroke="#2e718d" stroke-width="13" opacity=".81"/>
+    <path d="M348 119c12-5 23-4 34 2" stroke="#75b5b7" stroke-width="16" opacity=".72"/>
+    <path d="M384 137c12-2 24 1 36 7" stroke="#316f88" stroke-width="12" opacity=".78"/>
+
+    <path d="M91 158c14 7 26 10 40 9" stroke="#6da9ac" stroke-width="11" opacity=".63"/>
+    <path d="M139 173c17 7 31 9 46 5" stroke="#347c8e" stroke-width="14" opacity=".69"/>
+    <path d="M188 157c13 2 25-1 37-7" stroke="#b0d5ce" stroke-width="10" opacity=".8"/>
+    <path d="M231 175c16 5 30 5 44 0" stroke="#2e738a" stroke-width="13" opacity=".71"/>
+    <path d="M278 158c14 2 26 0 38-6" stroke="#72b0b2" stroke-width="11" opacity=".73"/>
+    <path d="M322 174c16 2 30-1 44-7" stroke="#316f87" stroke-width="14" opacity=".65"/>
+    <path d="M365 157c12-1 22-4 32-10" stroke="#acd2c7" stroke-width="10" opacity=".78"/>
+
+    <path d="M119 109l9-11m71 5 8-12m63 8 11-9m62 15 8-8m-222 75 10 5m111 12 10 3m94-17 11-5" stroke="#245f7a" stroke-width="4" opacity=".58"/>
+    <path d="M143 120c8 1 15 4 22 8m83 8c8-3 15-7 22-12m57 9c7 1 13 4 19 8" stroke="#e0eee5" stroke-width="5" opacity=".78"/>
   </g>
 </svg>

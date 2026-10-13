@@ -76,7 +76,7 @@ h1, h2, p { margin-top: 0; }
   right: 7%;
   width: 252px;
   height: 142px;
-  background: url('../images/watercolor-cloud.svg') center / contain no-repeat;
+  background: url('../images/white-ink-cloud.svg') center / contain no-repeat;
   opacity: .96;
   animation: cloud-drift 22s ease-in-out infinite alternate;
 }

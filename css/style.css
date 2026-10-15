@@ -80,6 +80,16 @@ h1, h2, p { margin-top: 0; }
   opacity: .96;
   animation: cloud-drift 22s ease-in-out infinite alternate;
 }
+.home-camera {
+  position: absolute;
+  top: 34px;
+  right: 31%;
+  width: 150px;
+  height: 106px;
+  background: url('../images/oil-paint-camera.svg') center / contain no-repeat;
+  opacity: .9;
+  transform: rotate(-3deg);
+}
 .home-cloud-shadow { display: none; }
 @keyframes cloud-drift { from { transform: translateX(-10px) rotate(-1deg); } to { transform: translateX(18px) rotate(1deg); } }
 
@@ -280,6 +290,8 @@ body.modal-open { overflow: hidden; }
   .intro { display: block; min-height: 132px; padding: 54px 0 25px; }
   .intro .eyebrow { margin-bottom: 18px; }
   .intro h1 { font-size: 9px; letter-spacing: .18em; white-space: normal; }
+  .home-camera { top: 27px; right: 37%; width: 86px; height: 62px; }
+  .home-cloud { top: 22px; right: 4%; width: 152px; height: 92px; }
   .project-list { padding-top: 34px; }
   .project-row, .project-row-left, .project-row-right { width: 100%; margin: 0 0 72px; }
   .project-row-right { margin-left: 0; }

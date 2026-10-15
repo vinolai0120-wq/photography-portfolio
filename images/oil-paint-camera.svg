@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" fill="none">
+  <defs>
+    <filter id="oil" x="-8%" y="-10%" width="116%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035 .12" numOctaves="2" seed="22" result="paint"/>
+      <feDisplacementMap in="SourceGraphic" in2="paint" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <ellipse cx="458" cy="493" rx="278" ry="28" fill="#273e4b" opacity=".08" filter="url(#soft)"/>
+  <g filter="url(#oil)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M184 244c3-42 31-68 76-76l91-15c47-8 85 7 105 39l17 27 93 0c33 1 59 24 62 59l10 113c3 38-23 68-62 71l-310 22c-38 3-72-19-78-56Z" fill="#344d5b"/>
+    <path d="M194 246c8-32 31-53 67-60l91-15c37-6 67 3 84 27l19 29-259 20Z" fill="#536c76" opacity=".68"/>
+    <path d="M189 419c52 19 106 25 163 21l235-17c23-2 41-14 50-30 8 28-12 55-53 59l-310 22c-39 3-76-18-85-55Z" fill="#203944" opacity=".8"/>
+    <path d="M198 270c33-13 61-17 91-16m-73 177c37 11 78 15 117 12m164-17c33-2 62-9 86-21" stroke="#76909a" stroke-width="13" opacity=".42"/>
+    <path d="M229 207l104-18m-91 34 82-13m153 24 63 2m-52 15 71 1" stroke="#a9b4b0" stroke-width="7" opacity=".35"/>
+  </g>
+  <g filter="url(#oil)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M270 174l18-35c7-14 20-22 36-24l105-9c19-2 35 7 42 24l17 41Z" fill="#2a414d"/>
+    <path d="M300 145l112-11c14-1 25 6 31 19l4 10-165 12Z" fill="#71888c" opacity=".58"/>
+    <path d="M442 130l49-5c9-1 16 4 19 13l6 24-61 4Z" fill="#bd9b67"/>
+    <path d="M449 135l38-4 5 20-39 3Z" fill="#e1c28b" opacity=".58"/>
+  </g>
+  <g filter="url(#oil)" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="372" cy="316" rx="99" ry="106" fill="#a56d4b"/>
+    <ellipse cx="372" cy="316" rx="81" ry="89" fill="#d39b64"/>
+    <ellipse cx="372" cy="316" rx="64" ry="72" fill="#355f6a"/>
+    <ellipse cx="372" cy="316" rx="47" ry="55" fill="#172d39"/>
+    <path d="M318 284c28-42 72-53 106-29m-123 87c15 34 43 57 76 62m-24-151c38 8 67 31 80 66" stroke="#f1c98b" stroke-width="11" opacity=".56"/>
+    <path d="M344 280c17-11 36-15 54-9m-77 86c11 16 26 27 44 34" stroke="#89acac" stroke-width="8" opacity=".56"/>
+  </g>
+  <g filter="url(#oil)" stroke-linecap="round">
+    <path d="M160 259l-28 14m37-1-38 19m411-99 33-4m-24 16 45 0m-45 245 38-8m-79 22 42-4" stroke="#344d5b" stroke-width="9" opacity=".62"/>
+    <path d="M284 481l-32 8m67-7-29 13m211-30 35-8" stroke="#b17b57" stroke-width="7" opacity=".58"/>
+    <path d="M186 337c-15 9-22 19-23 32m496-28c10 13 14 28 12 42" stroke="#d7b67d" stroke-width="5" opacity=".55"/>
+  </g>
+</svg>
